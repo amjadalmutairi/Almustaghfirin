@@ -38,7 +38,7 @@ public class AboutActivity extends AppCompatActivity {
         github.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = "http://www.example.com";
+                String url = "https://github.com/amjadalmutairi/Almustaghfirin.git";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
                 startActivity(i);
