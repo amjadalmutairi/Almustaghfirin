@@ -78,7 +78,8 @@
             android:layout_margin="@dimen/dp_5"
             android:background="@drawable/light_green_circle"
             android:padding="@dimen/dp_10"
-            android:src="@drawable/ic_plus"/>
+            android:src="@drawable/ic_plus"
+            android:contentDescription="+" />
 
         <ImageButton
             android:id="@+id/decrementButton"
@@ -87,7 +88,8 @@
             android:layout_margin="@dimen/dp_5"
             android:background="@drawable/light_green_circle"
             android:padding="@dimen/dp_10"
-            android:src="@drawable/ic_minus" />
+            android:src="@drawable/ic_minus"
+            android:contentDescription="-" />
 
         <ImageButton
             android:id="@+id/resetButton"
@@ -96,7 +98,8 @@
             android:layout_margin="@dimen/dp_5"
             android:background="@drawable/light_green_circle"
             android:padding="@dimen/dp_10"
-            android:src="@drawable/ic_reset" />
+            android:src="@drawable/ic_reset"
+            android:contentDescription="@string/reset_title" />
     </LinearLayout>
 
     <LinearLayout
@@ -123,7 +126,8 @@
             android:src="@drawable/ic_about"
             android:background="@drawable/light_green_rec"
             android:padding="@dimen/dp_5"
-            android:layout_margin="@dimen/dp_2"/>
+            android:layout_margin="@dimen/dp_2"
+            android:contentDescription="!" />
         <ImageButton
             android:id="@+id/shareButton"
             android:layout_width="0dp"
@@ -132,7 +136,8 @@
             android:src="@drawable/ic_share"
             android:background="@drawable/light_green_rec"
             android:padding="@dimen/dp_5"
-            android:layout_margin="@dimen/dp_2"/>
+            android:layout_margin="@dimen/dp_2"
+            android:contentDescription="@string/share_title" />
     </LinearLayout>
 
 </RelativeLayout>

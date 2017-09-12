@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.astaghfirullahTextView)  TextView astaghfirullahTextView;
     @BindView(R.id.ayah)  TextView ayahTextView;
     @BindView(R.id.shareButton) ImageButton share;
+    @BindView(R.id.aboutButton) ImageButton about;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,13 +91,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 final String packageName = getApplicationContext().getPackageName();
-
                 Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
                 sharingIntent.setType("text/html");
                 String shareBody = getString(R.string.share_message) + "\n" + "https://play.google.com/store/apps/details?id=" + packageName ;
                 sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.share_title) + " " + getString(R.string.app) + " " + getString(R.string.app_name));
                 sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
                 startActivity(Intent.createChooser(sharingIntent, getString(R.string.share_title)));
+            }
+        });
+
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), AboutActivity.class);
+                startActivity(intent);
             }
         });
     }
