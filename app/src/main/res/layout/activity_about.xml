@@ -75,7 +75,7 @@
             android:textStyle="bold"
             android:textColor="#FFF"/>
         <ImageButton
-            android:id="@+id/shareButton"
+            android:id="@+id/shareBut"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
