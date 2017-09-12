@@ -1,0 +1,15 @@
+<resources>
+    <!--Almustaghfirin-->
+    <string name="app_name"> المستغفرين </string>
+    <string name="minus_error_message"> العداد صفر </string>
+    <string name="reset_title"> تصفير العداد </string>
+    <string name="reset_confirm_q"> هل تريد تصفير العداد ؟ </string>
+    <string name="yes"> نعم </string>
+    <string name="cancel"> إلغاء </string>
+    <string name="rights">Copyright © 2017 All rights reserved.</string>
+    <string name="astaghfirullah"> أسْتَغْفِرُ الله </string>
+    <string name="istighfar_ayah">﴿ وَمَا كَانَ اللَّهُ مُعَذِّبَهُمْ وَهُمْ يَسْتَغْفِرُونَ ﴾ </string>
+    <string name="share_title">مشاركة</string>
+    <string name="share_message">انضم إلى ركب المستغفرين . . \n حمّل التطبيق من الرابط التالي: </string>
+    <string name="app">تطبيق</string>
+</resources>

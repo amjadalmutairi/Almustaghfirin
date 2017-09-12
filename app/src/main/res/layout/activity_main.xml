@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_green"
+    tools:context="me.amjadalmutairi.almustaghfirin.MainActivity">
+
+    <TextView
+        android:id="@+id/ayah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:padding="@dimen/dp_20"
+        android:text="@string/istighfar_ayah"
+        android:gravity="center"
+        android:textSize="@dimen/sp_20"
+        android:textColor="@color/colorPrimaryDark"
+        android:background="@drawable/white_op_rec"/>
+
+    <LinearLayout
+        android:id="@+id/counter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/ayah"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:padding="@dimen/dp_5"
+        android:gravity="center_vertical">
+        <TextView
+            android:id="@+id/counterView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/dp_10"
+            android:padding="@dimen/dp_10"
+            android:gravity="center"
+            android:textSize="@dimen/sp_23"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:background="@drawable/white_op_rec_without_border"/>
+
+        <TextView
+            android:id="@+id/astaghfirullahTextView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:layout_margin="@dimen/dp_10"
+            android:padding="@dimen/dp_10"
+            android:text="@string/astaghfirullah"
+            android:gravity="center"
+            android:textSize="@dimen/sp_40"
+            android:textColor="@android:color/white"
+            android:background="@drawable/white_op_rec_without_border"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_below="@id/counter">
+
+        <ImageButton
+            android:id="@+id/incrementButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_5"
+            android:background="@drawable/light_green_circle"
+            android:padding="@dimen/dp_10"
+            android:src="@drawable/ic_plus"/>
+
+        <ImageButton
+            android:id="@+id/decrementButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_5"
+            android:background="@drawable/light_green_circle"
+            android:padding="@dimen/dp_10"
+            android:src="@drawable/ic_minus" />
+
+        <ImageButton
+            android:id="@+id/resetButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_5"
+            android:background="@drawable/light_green_circle"
+            android:padding="@dimen/dp_10"
+            android:src="@drawable/ic_reset" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@color/white_op">
+        <TextView
+            android:id="@+id/rightsTextView"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="match_parent"
+            android:padding="@dimen/dp_5"
+            android:text="@string/rights"
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:textColor="#FFF"/>
+        <ImageButton
+            android:id="@+id/aboutButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_about"
+            android:background="@drawable/light_green_rec"
+            android:padding="@dimen/dp_5"
+            android:layout_margin="@dimen/dp_2"/>
+        <ImageButton
+            android:id="@+id/shareButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_share"
+            android:background="@drawable/light_green_rec"
+            android:padding="@dimen/dp_5"
+            android:layout_margin="@dimen/dp_2"/>
+    </LinearLayout>
+
+</RelativeLayout>
