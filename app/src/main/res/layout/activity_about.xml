@@ -5,85 +5,99 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white_green"
-    android:gravity="center"
     tools:context="me.amjadalmutairi.almustaghfirin.AboutActivity">
 
     <TextView
         android:id="@+id/dev_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/amjad"
+        android:layout_marginRight="@dimen/dp_5"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@drawable/white_op_rec_without_border"
         android:gravity="center"
-        android:textSize="@dimen/sp_23"
-        android:textColor="@color/colorPrimaryDark"
-        android:textStyle="bold"
-        android:layout_margin="@dimen/dp_5"
         android:padding="@dimen/dp_10"
-        android:background="@drawable/white_op_rec_without_border"/>
+        android:text="@string/amjad"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/sp_23"
+        android:textStyle="bold" />
 
     <ImageButton
         android:id="@+id/mail_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/dev_view"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:src="@drawable/ic_email"
-        android:padding="@dimen/dp_10"
-        android:layout_margin="@dimen/dp_10"
-        android:background="@drawable/light_green_circle"/>
+        android:layout_alignLeft="@id/dev_view"
+        android:layout_alignStart="@id/dev_view"
+        android:layout_marginRight="@dimen/dp_5"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_25"
+        android:background="@drawable/light_green_circle"
+        android:padding="@dimen/dp_5"
+        android:src="@drawable/ic_email" />
 
     <TextView
         android:id="@+id/source_code_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/mail_button"
-        android:text="@string/source_code"
+        android:layout_below="@id/dev_view"
+        android:layout_marginRight="@dimen/dp_5"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@drawable/white_op_rec_without_border"
         android:gravity="center"
-        android:textSize="@dimen/sp_23"
-        android:textColor="@color/colorPrimaryDark"
-        android:textStyle="bold"
-        android:layout_margin="@dimen/dp_5"
         android:padding="@dimen/dp_10"
-        android:background="@drawable/white_op_rec_without_border"/>
+        android:text="@string/source_code"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/sp_23"
+        android:textStyle="bold" />
+
     <ImageButton
         android:id="@+id/github_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/source_code_view"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="@dimen/dp_10"
-        android:src="@drawable/github"
-        android:padding="@dimen/dp_10"
-        android:background="@drawable/light_green_circle"/>
+        android:layout_alignLeft="@id/source_code_view"
+        android:layout_alignStart="@id/source_code_view"
+        android:layout_below="@id/dev_view"
+        android:layout_marginRight="@dimen/dp_5"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_25"
+        android:background="@drawable/light_green_circle"
+        android:padding="@dimen/dp_5"
+        android:src="@drawable/github" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:background="@color/white_op"
         android:orientation="horizontal"
-        android:background="@color/white_op">
+        android:padding="@dimen/dp_2">
+
         <TextView
             android:id="@+id/rightsTextView"
             android:layout_width="0dp"
-            android:layout_weight="4"
             android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="center_vertical"
             android:padding="@dimen/dp_5"
             android:text="@string/rights"
-            android:gravity="center_vertical"
-            android:textStyle="bold"
-            android:textColor="#FFF"/>
+            android:textColor="#FFF"
+            android:textStyle="bold" />
+
         <ImageButton
             android:id="@+id/shareBut"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_share"
-            android:background="@drawable/light_green_rec"
-            android:padding="@dimen/dp_5"
             android:layout_margin="@dimen/dp_2"
-            android:contentDescription="@string/share_title" />
+            android:layout_weight="1"
+            android:background="@drawable/light_green_rec"
+            android:contentDescription="@string/share_title"
+            android:padding="@dimen/dp_2"
+            android:src="@drawable/ic_share" />
     </LinearLayout>
 
 </RelativeLayout>
