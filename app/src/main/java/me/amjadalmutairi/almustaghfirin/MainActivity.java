@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
         counter = settings.getInt("counter", 0);
         counterTextView.setText(String.valueOf(counter));
 
-
         decrement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
