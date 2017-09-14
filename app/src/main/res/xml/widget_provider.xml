@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     android:initialLayout="@layout/widget"
     android:minHeight="80dp"
@@ -5,5 +6,6 @@
     android:minResizeWidth="450dp"
     android:minWidth="450dp"
     android:resizeMode="vertical"
+    android:previewImage="@drawable/w_screenshot"
     android:widgetCategory="home_screen">
 </appwidget-provider>

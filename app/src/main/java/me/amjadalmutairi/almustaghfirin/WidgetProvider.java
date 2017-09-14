@@ -81,7 +81,7 @@ public class WidgetProvider extends AppWidgetProvider {
         intent.setAction(action);
         return PendingIntent.getBroadcast(context, 0, intent, 0);
     }
-    private void updateCounter(Context context){
+    private void updateCounter(Context context) {
         SharedPreferences settings = context.getSharedPreferences(PREFS_NAME,  Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = settings.edit();
         editor.putInt("counter", counter);
