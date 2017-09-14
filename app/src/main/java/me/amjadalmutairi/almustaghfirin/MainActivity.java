@@ -1,5 +1,7 @@
 package me.amjadalmutairi.almustaghfirin;
 
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,6 +15,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.RemoteViews;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,7 +24,7 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
     public static final String PREFS_NAME = "IstighfarCounter";
-    private int counter;
+    protected static int counter;
 
     @BindView(R.id.decrementButton)
     ImageButton decrement;
@@ -50,11 +53,14 @@ public class MainActivity extends AppCompatActivity {
         astaghfirullahTextView.setTypeface(arabicFont);
         ayahTextView.setTypeface(arabicFont);
 
+        setCounterView();
+
         astaghfirullahTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 counter++;
                 counterTextView.setText(String.valueOf(counter));
+                updateWidget();
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                     VibrationEffect vibrationEffect = VibrationEffect.createOneShot(5000, VibrationEffect.DEFAULT_AMPLITUDE);
@@ -63,16 +69,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        SharedPreferences settings = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-        counter = settings.getInt("counter", 0);
-        counterTextView.setText(String.valueOf(counter));
-
         decrement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (counter > 0) {
                     counter--;
                     counterTextView.setText(String.valueOf(counter));
+                    updateWidget();
                 } else {
                     Toast.makeText(getApplicationContext(), getString(R.string.minus_error_message), Toast.LENGTH_SHORT).show();
                 }
@@ -90,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int whichButton) {
                                 counter = 0;
                                 counterTextView.setText(String.valueOf(counter));
+                                updateWidget();
                                 dialog.dismiss();
                             }
                         })
@@ -126,8 +130,45 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        setCounterView();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        setCounterView();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        saveCounter();
+    }
+
+    @Override
     protected void onStop() {
         super.onStop();
+        saveCounter();
+    }
+
+    private void updateWidget(){
+        Context context = getApplicationContext();
+        AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
+        RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget);
+        ComponentName thisWidget = new ComponentName(context, WidgetProvider.class);
+        remoteViews.setTextViewText(R.id.w_counter, String.valueOf(counter));
+        appWidgetManager.updateAppWidget(thisWidget, remoteViews);
+    }
+
+    private void setCounterView(){
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        counter = settings.getInt("counter", 0);
+        counterTextView.setText(String.valueOf(counter));
+    }
+
+    private void saveCounter(){
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         SharedPreferences.Editor editor = settings.edit();
         editor.putInt("counter", counter);
