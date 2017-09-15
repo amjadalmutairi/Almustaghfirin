@@ -1,5 +1,4 @@
 <resources>
-    <!--Almustaghfirin-->
     <string name="app_name"> المستغفرون </string>
     <string name="minus_error_message"> العداد صفر </string>
     <string name="reset_title"> تصفير العداد </string>

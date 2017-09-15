@@ -58,7 +58,6 @@
         android:id="@+id/github_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/source_code_view"
         android:layout_alignStart="@id/source_code_view"
         android:layout_below="@id/dev_view"
         android:layout_marginRight="@dimen/dp_5"

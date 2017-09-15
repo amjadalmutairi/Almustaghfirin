@@ -24,7 +24,7 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
     public static final String PREFS_NAME = "IstighfarCounter";
-    protected static int counter;
+    private static int counter;
 
     @BindView(R.id.decrementButton)
     ImageButton decrement;
@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
         saveCounter();
     }
 
-    private void updateWidget(){
+    private void updateWidget() {
         Context context = getApplicationContext();
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget);
@@ -162,13 +162,13 @@ public class MainActivity extends AppCompatActivity {
         appWidgetManager.updateAppWidget(thisWidget, remoteViews);
     }
 
-    private void setCounterView(){
+    private void setCounterView() {
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         counter = settings.getInt("counter", 0);
         counterTextView.setText(String.valueOf(counter));
     }
 
-    private void saveCounter(){
+    private void saveCounter() {
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
         SharedPreferences.Editor editor = settings.edit();
         editor.putInt("counter", counter);

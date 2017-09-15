@@ -1,72 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary">
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:padding="@dimen/dp_5">
 
     <LinearLayout
-        android:id="@+id/text_views"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:gravity="center"
-        android:orientation="horizontal"
-        android:padding="@dimen/dp_5">
+        android:orientation="horizontal">
 
-        <LinearLayout
+        <ImageButton
+            android:id="@+id/w_minus"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/w_minus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dp_10"
-                android:background="@drawable/light_green_circle"
-                android:padding="@dimen/dp_10"
-                android:src="@drawable/ic_minus" />
-
-            <ImageButton
-                android:id="@+id/w_reset"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dp_10"
-                android:background="@drawable/light_green_circle"
-                android:padding="@dimen/dp_10"
-                android:src="@drawable/ic_reset" />
-        </LinearLayout>
-
-
-        <TextView
-            android:id="@+id/w_counter"
-            android:layout_height="match_parent"
-            android:layout_width="0dp"
-            android:layout_margin="@dimen/dp_5"
-            android:layout_weight="1"
-            android:background="@drawable/white_op_rec_without_border"
-            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:background="@drawable/light_green_circle"
             android:padding="@dimen/dp_10"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/sp_23"
-            android:textStyle="bold" />
+            android:src="@drawable/ic_minus" />
 
-        <TextView
-            android:id="@+id/w_increment"
-            android:layout_height="match_parent"
-            android:layout_width="0dp"
-            android:layout_margin="@dimen/dp_5"
-            android:layout_weight="1"
-            android:background="@drawable/white_op_rec_without_border"
-            android:gravity="center"
+        <ImageButton
+            android:id="@+id/w_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:background="@drawable/light_green_circle"
             android:padding="@dimen/dp_10"
-            android:text="@string/astaghfirullah"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/sp_23"
-            android:textStyle="bold" />
+            android:src="@drawable/ic_reset" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/w_counter"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dp_5"
+        android:layout_weight="1"
+        android:background="@drawable/white_op_rec_without_border"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp_23"
+        android:textStyle="bold" />
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/w_increment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dp_5"
+        android:layout_weight="1"
+        android:background="@drawable/white_op_rec_without_border"
+        android:gravity="center"
+        android:padding="@dimen/dp_10"
+        android:text="@string/astaghfirullah"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/sp_23"
+        android:textStyle="bold" />
+</LinearLayout>
